@@ -27,6 +27,7 @@ public class StringCalculator {
     public int addWithDelimeter(String numbers,String delimeter) {
     	int sum = 0;
     	String[] numberListWithDelimeter = numbers.split("\n");
+    	List<String> negativeValues = new ArrayList<>();
     	
         ArrayList<String> numberList = new ArrayList<String>();
         for(String num: numberListWithDelimeter) {
@@ -36,8 +37,19 @@ public class StringCalculator {
         }
         
         for(String num: numberList) {
-        	sum += Integer.parseInt(num);
+        	
+        	Integer number = Integer.parseInt(num);
+        	if(number < 0) {
+        		negativeValues.add(num);
+        	}
+        	sum += number;
         }
+        
+        if (negativeValues.size()!=0) {
+        	throw new IllegalArgumentException("Negative Values not yet supported"+negativeValues);
+        }
+        
         return sum;
     }
+    
 }

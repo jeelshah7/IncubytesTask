@@ -56,4 +56,13 @@ public class StringCalculatorTest {
         
         assertEquals(3,ans);
     }
+
+    @Test
+    public void testNegativeValues() {
+    	StringCalculator calculator = new StringCalculator();
+        
+        assertThrows(IllegalArgumentException.class, ()->{
+        	Integer.toString(calculator.Add("//;\n9;-5"));
+        });
+    }
 }
