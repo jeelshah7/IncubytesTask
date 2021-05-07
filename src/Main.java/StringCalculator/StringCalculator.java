@@ -10,10 +10,19 @@ public class StringCalculator {
         }
 
         int sum = 0;
-        String[] numberList = numbers.split(",");
+        String[] numberListWithCommas = numbers.split("\n");
+        
+        ArrayList<String> numberList = new ArrayList<String>();
+        
+        for(String num: numberListWithCommas) {
+        	String[] numbersWithoutCommas = num.split(",");
+        	List<String> stringList = new ArrayList<String>(Arrays.asList(numbersWithoutCommas));
+        	numberList.addAll(stringList);
+        }
         
         for(String num: numberList) {
         	sum += Integer.parseInt(num);
+        	
         }
         
         return sum;

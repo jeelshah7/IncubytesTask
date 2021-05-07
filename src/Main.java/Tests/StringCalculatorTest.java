@@ -40,4 +40,12 @@ public class StringCalculatorTest {
 
         assertEquals(17,ans);
     }
+
+    @Test
+    public void testNewLine() {
+    	StringCalculator calculator = new StringCalculator();
+        int ans = calculator.Add("1,\n2,3");
+
+        assertEquals(6,ans);
+    }
 }
