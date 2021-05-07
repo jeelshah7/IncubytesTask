@@ -32,4 +32,12 @@ public class StringCalculatorTest {
 
         assertEquals(3,ans);
     }
+
+    @Test
+    public void multipleTestNumbers() {
+        StringCalculator calculator = new StringCalculator();
+        int ans = calculator.Add("1,2,5,9");
+
+        assertEquals(17,ans);
+    }
 }

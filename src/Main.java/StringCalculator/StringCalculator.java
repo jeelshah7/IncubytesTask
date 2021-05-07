@@ -9,17 +9,13 @@ public class StringCalculator {
             return 0;
         }
 
-        int sum=0;
-        int firstComma = numbers.indexOf(",");
+        int sum = 0;
+        String[] numberList = numbers.split(",");
         
-        if(firstComma != -1){
-            int firstNumber = Integer.parseInt(numbers.substring(0, firstComma));
-            sum += firstNumber;
-            int secondNumber = Integer.parseInt(numbers.substring(firstComma+1, numbers.length() - 1));
-            sum += secondNumber; 
-        }else{
-            sum += Integer.parseInt(numbers);
+        for(String num: numberList) {
+        	sum += Integer.parseInt(num);
         }
+        
         return sum;
     }
 }
